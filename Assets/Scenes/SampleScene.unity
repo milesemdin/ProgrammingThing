@@ -302,8 +302,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.2318635, y: 0.0069521144, z: -0.0028141662, w: 0.97271943}
-  m_LocalPosition: {x: 0.3863575, y: -3.7853737, z: -11.180799}
+  m_LocalRotation: {x: 0.017987177, y: 0.03223741, z: -0.012267813, w: 0.99924314}
+  m_LocalPosition: {x: -0.6761427, y: -0.9317517, z: -11.941198}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -323,6 +323,8 @@ GameObject:
   - component: {fileID: 1778425870}
   - component: {fileID: 1778425869}
   - component: {fileID: 1778425874}
+  - component: {fileID: 1778425875}
+  - component: {fileID: 1778425876}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -398,7 +400,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9bf6e415780f5fa43a340ca69197e408, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -437,7 +439,7 @@ Transform:
   m_GameObject: {fileID: 1778425868}
   serializedVersion: 2
   m_LocalRotation: {x: -0.16320038, y: -0.31025806, z: 0.054155715, w: -0.9349721}
-  m_LocalPosition: {x: 228.35904, y: 37.273514, z: 161.04156}
+  m_LocalPosition: {x: 221.28, y: 8.76, z: 151.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -457,8 +459,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 500
-  camSpeed: 1
+  camSpeed: 2
   maxSpeed: 399
+--- !u!114 &1778425875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778425868}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e863e23b8e3d04388f54aa8b1cdbac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 10
+  runSpeed: 20
+  crouchSpeed: 5
+  jumpPower: 8
+  gravity: 2.5
+  groundedMask:
+    serializedVersion: 2
+    m_Bits: 64
+  freeLookSensitivity: 3
+--- !u!114 &1778425876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778425868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a83bed61f65c3a43bf170b7aa96cc84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freeLookSensitivity: 3
 --- !u!1 &2107365633
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +506,7 @@ GameObject:
   - component: {fileID: 2107365636}
   - component: {fileID: 2107365635}
   - component: {fileID: 2107365634}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -7,18 +7,21 @@ public class GuyMove : MonoBehaviour
     public float moveSpeed; 
     public float camSpeed;
     public float maxSpeed;
+
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
     private void Update()
     {
-        
+       
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
             GetComponent<Rigidbody>().AddForce(Vector3.up * 500);
         }
         transform.Rotate(Vector3.up * Input.GetAxis("Mouse X"));
+        transform.Rotate(Vector3.down * Input.GetAxis("Mouse Y"));
         Move();
        
     }
