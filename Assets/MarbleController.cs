@@ -10,8 +10,11 @@ public class MarbleController : MonoBehaviour
     public GameObject cameraAnchor;
     //how many degrees per second the player can turn
     public float cameraTurnSpeed;
-
+    public float jumpPower;
+    public float gravity;
     public Vector2 inputThisFrame;
+    private Vector3 movementThisFrame = new Vector3();
+    [SerializeField] private LayerMask groundedMask;
 
     public Rigidbody rb;
 
@@ -30,14 +33,22 @@ public class MarbleController : MonoBehaviour
         inputThisFrame.x = Input.GetAxis("Horizontal");
         inputThisFrame.y = Input.GetAxis("Vertical");
 
+        movementThisFrame.x = inputThisFrame.x;
+        movementThisFrame.z = inputThisFrame.y;
+
+
+        movementThisFrame.y = rb.velocity.y - gravity * Time.deltaTime;
         cameraAnchor.transform.Rotate(Vector3.up, cameraTurnSpeed * Time.deltaTime * inputThisFrame.x);
 
         cameraAnchor.transform.position = transform.position;
-        
-        if (Input.GetKey(KeyCode.Space))
+
+
+        if (IsGrounded())
         {
-            GetComponent<Rigidbody>().AddForce(Vector3.up * 0.5f);
-            rb.velocity += Vector3.up * 0.5f;
+            if (Input.GetButtonDown("Jump"))
+            {
+                rb.velocity += Vector3.up * 10f;
+            }
         }
     }
 
@@ -69,8 +80,12 @@ public class MarbleController : MonoBehaviour
 
         if (other.gameObject.tag == "Jump")
         {
-            GetComponent<Rigidbody>().AddForce(Vector3.up * 500f);
+            //GetComponent<Rigidbody>().AddForce(Vector3.up * 500f);
             rb.velocity += Vector3.up * 50f;
         }
+    }
+    private bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down, 1.001f, groundedMask);
     }
 }
