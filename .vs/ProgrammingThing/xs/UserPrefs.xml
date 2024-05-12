@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{F65BCD6F-9192-3144-C17C-2D295C8DEE43}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MarbleController.cs">
+    <Files>
+      <File FileName="Assets/PauseMenu.cs" Line="27" Column="37" />
+      <File FileName="Assets/MinusPoints.cs" Line="7" Column="28" />
+      <File FileName="Assets/Pickup.cs" Line="9" Column="1" />
+      <File FileName="Assets/MarbleController.cs" Line="80" Column="39" />
+      <File FileName="Assets/UIManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Speed.cs" Line="7" Column="5" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ProgrammingThing" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="MarbleController.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2ab2c6c8-5b45-41e1-8cae-e4c97112b089" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
